@@ -13,7 +13,5 @@ int main() {
     n2 = n2| mask2;
     cout<<n2<<endl;
     // clear bits 
-
-    
     return 0;
 }
