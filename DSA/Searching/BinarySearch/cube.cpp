@@ -7,6 +7,5 @@ int main() {
     int n;
     cin>>n;
     cube(n);
-    
     return 0;
 }
