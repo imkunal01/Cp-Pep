@@ -39,7 +39,7 @@ int minEatingSpeedBinary(const vector<int>& piles, int h){
 int main() {
     vector<int> v = {30,11,23,4,20};
     int h =5;
-    // cout<<minEatingSpeed(v,h);
-    cout<<minEatingSpeedBinary(v,h);
+    cout<<minEatingSpeed(v,h);
+    // cout<<minEatingSpeedBinary(v,h);
     return 0;
 }
