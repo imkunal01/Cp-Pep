@@ -1,40 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
+int Check(vector<int>arr,int k){
 
-int main() {
-    double a, b;
-    char op;
+    int n = arr.size();
+    int good= 0;
+    int bad= 0;
 
-    cout << "first : ";
-    cin >> a;
-
-    cout << "operator (+, -, *, /): ";
-
-    cin >> op;
-
-    cout << "second number: ";
-
-    cin >> b;
-
-    if (op == '+') {
-        cout << "Result: " << a + b;
-    }
-    else if (op == '-') {
-        cout << "Result: " << a - b;
-    }
-    else if (op == '*') {
-        cout << "Result: " << a * b;
-    }
-    else if (op == '/') {
-        if (b == 0) {
-            cout << "cant be divided by zero";
-        } else {
-            cout << "Res: " << a / b;
+    for(int i =0;i<n;i++){
+        if(arr[i]<=k){
+            good++;
         }
     }
-    else {
-        cout << "Invalid operator!";
+    
+    for(int i = 0;i<good;i++){
+        if(arr[i]>k){
+            bad++;
+        }
     }
 
+    int ans = bad;
+    
+    if (good == 0 || good == n) return 0;
+    int r = good;
+    int l = 0;
+    while(r < n){
+        if(arr[l]>k){
+            bad--;
+        }
+        l++;
+
+        if(arr[r]>k){
+            bad++;
+        }
+        r++;
+
+        ans = min(ans,bad);
+    }
+    return ans;
+}
+
+int main() {
+    vector<int>arr = {2, 7, 9, 5, 8, 7, 4};
+    int k = 6;
+    int ans = Check(arr,k);
+    cout<<ans;
     return 0;
 }
