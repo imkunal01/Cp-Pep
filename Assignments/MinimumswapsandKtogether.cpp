@@ -40,9 +40,30 @@ int Check(vector<int>arr,int k){
 }
 
 int main() {
-    vector<int>arr = {2, 7, 9, 5, 8, 7, 4};
-    int k = 6;
-    int ans = Check(arr,k);
-    cout<<ans;
+
+    {
+        vector<int>arr = {2, 7, 9, 5, 8, 7, 4};
+        int k = 6;
+        cout << "Test Case 1: " << Check(arr,k) << "\n";
+        if(Check(arr,k) == 2){
+            cout<<"Test Case Passed";
+        }
+        else{
+            
+            cout<<"Test Case Failed";
+        }
+        cout<<endl;
+    }{
+        vector<int>arr = {2, 1, 5, 6, 3};
+        int k = 3;
+        cout << "Test Case 2: " << Check(arr,k) << "\n";
+        if(Check(arr,k) == 1){
+            cout<<"Test Case Passed";
+        }
+        else{
+            
+            cout<<"Test Case Failed";
+        }
+    }
     return 0;
 }
