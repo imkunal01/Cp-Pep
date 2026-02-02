@@ -24,6 +24,7 @@ int Check(vector<int>arr,int k){
     int r = good;
     int l = 0;
     while(r < n){
+
         if(arr[l]>k){
             bad--;
         }
@@ -35,6 +36,7 @@ int Check(vector<int>arr,int k){
         r++;
 
         ans = min(ans,bad);
+        
     }
     return ans;
 }
