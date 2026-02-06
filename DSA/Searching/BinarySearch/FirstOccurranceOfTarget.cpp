@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int firstOcc(vector<int> v,int target){
     int l = 0;
     int r= v.size()-1;
@@ -16,11 +17,11 @@ int firstOcc(vector<int> v,int target){
     }
     return ans;
 }
+
 int main() {
     vector<int> v= {1,2,3,4,5,5};
     int n = v.size();
     int target = 5;
-   cout<< firstOcc(v,target);
-
+    cout<< firstOcc(v,target);
     return 0;
 }

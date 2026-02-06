@@ -5,9 +5,13 @@ public:
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
         int n = rooms.size();
         vector<bool>visited (n,false);
+        
         queue<int> q ;
+        
         visited[0] = true;
+        
         q.push(0);
+
         while(!q.empty()){
             int currentNode = q.front();
             q.pop();
@@ -18,6 +22,7 @@ public:
                 }
             }
         }
+        
         for(bool v : visited){
             if(!v) return false;
         }
