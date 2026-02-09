@@ -2,11 +2,14 @@
 using namespace std;
 
 vector<int> bfs(int startNode, const vector<vector<int>>& adj){
+      
     vector<bool> visited(adj.size(), false);
     queue<int> q;
     vector<int> traversal;
+    
     visited[startNode] = true;
     q.push(startNode);
+
     while(!q.empty()){
         int currentNode = q.front();
         q.pop();
