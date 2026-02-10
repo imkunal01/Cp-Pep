@@ -15,6 +15,8 @@ vector<vector<int>> ConvertArrTo2D(vector<int>& mat, int n, int m) {
     }
     return ans;
 }
+
+
 int main() {
     
     vector<int> mat = {1, 2, 3, 4, 5, 6};
