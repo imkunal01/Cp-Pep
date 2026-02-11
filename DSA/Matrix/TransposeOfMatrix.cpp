@@ -11,7 +11,6 @@ vector<vector<int>> transpose(vector<vector<int>>& mat) {
             transposed[j][i] = mat[i][j];
         }
     }
-
     return transposed;
 }
 

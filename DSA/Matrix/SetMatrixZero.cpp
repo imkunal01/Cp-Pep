@@ -13,12 +13,14 @@ void setZeroes(vector<vector<int>>& mat) {
             break;
         }
     }
+    
     for (int i = 0; i < n; i++) {
         if (mat[i][0] == 0) {
             firstColZero = true;
             break;
         }
     }
+
     for (int i = 1; i < n; i++) {
         for (int j = 1; j < m; j++) {
             if (mat[i][j] == 0) {
@@ -27,6 +29,7 @@ void setZeroes(vector<vector<int>>& mat) {
             }
         }
     }
+
     for (int i = 1; i < n; i++) {
         for (int j = 1; j < m; j++) {
             if (mat[i][0] == 0 || mat[0][j] == 0) {
@@ -34,20 +37,18 @@ void setZeroes(vector<vector<int>>& mat) {
             }
         }
     }
+
     if (firstRowZero) {
         for (int j = 0; j < m; j++) {
             mat[0][j] = 0;
         }
     }
+
     if (firstColZero) {
         for (int i = 0; i < n; i++) {
             mat[i][0] = 0;
         }
     }
-    
-
-
-
 }
 
 
