@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-// this counts the numbers of 1 bits in a number
 int main() {
-    int n = 13;
-    int c = 0;
-    while(n){
-        if(n&1) c++;
-        n = n>>1;
+    vector<int> bits = {1,0,1,1};
+    int n = bits.size();
+    int decimalValue = 0;
+    for(int i = 0; i < n; i++) {
+        decimalValue = (decimalValue << 1) | bits[i];
+        
     }
-    cout<<c;
+    cout << "Decimal Value: " << decimalValue << endl;
+    
     return 0;
 }
