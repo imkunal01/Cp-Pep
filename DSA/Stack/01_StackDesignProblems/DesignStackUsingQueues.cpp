@@ -3,8 +3,23 @@ using namespace std;
 
 class MyStack{
     public:
-    
     queue<int> q1,q2;
+
+    queue<int> q;
+
+    // void push(int x) {
+    //     // 1. Get the current size before adding the new element
+    //     int size = q.size();
+        
+    //     // 2. Add the new element to the back
+    //     q.push(x);
+        
+    //     // 3. Rotate the queue: move all previous elements to the back
+    //     for (int i = 0; i < size; i++) {
+    //         q.push(q.front());
+    //         q.pop();
+    //     }
+    // }
 
     void push(int x){
         q2.push(x);

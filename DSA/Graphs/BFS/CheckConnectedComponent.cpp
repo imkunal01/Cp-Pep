@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bfs(int startNode, vector<vector<int>>& adj,
+void bfs(    int startNode, 
+             vector<vector<int>>& adj,
              vector<int>& visited,
              int& nodeCount,
-             int& edgeCount) {
+             int& edgeCount
+        ){
         
         queue<int> q;
         q.push(startNode);
