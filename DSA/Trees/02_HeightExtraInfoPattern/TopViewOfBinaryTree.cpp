@@ -51,7 +51,5 @@ int main() {
     for(int i=0;i<resultBFS.size();i++){
         cout<<resultBFS[i]<<" ";
     }
-
-    
     return 0;
 }

@@ -7,7 +7,7 @@ public:
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-int d = 0;
+    int d = 0;
     int height(TreeNode* root) {
         if (root == NULL) {
             return 0;
@@ -16,15 +16,13 @@ int d = 0;
         int lh = height(root->left);
         int rh = height(root->right);
         d = max(d, lh + rh);
-
         return 1 + max(lh, rh);
+
     }
     int diameterOfBinaryTree(TreeNode* root) {
         height(root);
         return d;
     }
-
-
 
 int main() {
     
