@@ -7,10 +7,6 @@ public:
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-
- 
-
-
     vector<int> topViewBFS(TreeNode *root) {
         vector<int> v;
         if(root == NULL){
