@@ -9,15 +9,18 @@ public:
 };
     vector<int> topViewBFS(TreeNode *root) {
         vector<int> v;
+
         if(root == NULL){
             return v;
         }
+        
         queue<pair<TreeNode*, int>> q;
         map<int,int> mp;
 
         q.push({root,0});
 
         while(!q.empty()){
+
             auto node = q.front();
             q.pop();
 
@@ -27,6 +30,7 @@ public:
             if(mp.find(hd) == mp.end()) mp[hd] = f->val;
             if(f->left) q.push({f->left,hd-1});
             if(f->right) q.push({f->right,hd+1});
+
         }
 
         for(auto& i:mp){
@@ -41,11 +45,12 @@ int main() {
     r->left = new TreeNode(2);
     r->right = new TreeNode(3);
 
-
     vector<int> resultBFS = topViewBFS(r);
+
     cout<<endl;
     for(int i=0;i<resultBFS.size();i++){
         cout<<resultBFS[i]<<" ";
     }
+
     return 0;
 }
