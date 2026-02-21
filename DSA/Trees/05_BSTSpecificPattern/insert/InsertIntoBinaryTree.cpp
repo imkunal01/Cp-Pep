@@ -1,8 +1,6 @@
-
-
-
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
 class TreeNode {
 public:
     int val;
@@ -23,7 +21,6 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
 }
 
 int main() {
-
     TreeNode* r= new TreeNode(1);
     r->left = new TreeNode(2);
     r->right = new TreeNode(3);
