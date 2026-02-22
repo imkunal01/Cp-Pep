@@ -19,13 +19,10 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
     }
     return root;
 }
-
 int main() {
     TreeNode* r= new TreeNode(1);
     r->left = new TreeNode(2);
     r->right = new TreeNode(3);
-
     insertIntoBST(r,4);
-
     return 0;
 }
