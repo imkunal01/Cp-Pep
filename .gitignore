@@ -1,4 +1,5 @@
 .vscode
 DevOps
-CP_DSA
+#  add full CP_DSA folder and its contents to .gitignore
+CP_DSA/
 
