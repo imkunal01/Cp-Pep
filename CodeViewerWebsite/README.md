@@ -1,102 +1,172 @@
 # WinterPep Code Viewer 🚀
 
-A beautiful MERN stack application to view and browse all your DSA code solutions.
+A beautiful, modern website to showcase your DSA problem solutions with syntax highlighting, search functionality, and a sexy animated UI.
 
-## Features
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
+![Tailwind](https://img.shields.io/badge/Tailwind-3-38B2AC?logo=tailwindcss)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-FF006E?logo=framer)
 
-- 📂 **File Explorer** - Browse through all folders and files
-- 🎨 **Syntax Highlighting** - Beautiful code display with syntax highlighting for C++
-- 🔍 **Search** - Quickly search for files across the repository
-- 📊 **Statistics** - View total files, folders, and lines of code
-- 📋 **Copy to Clipboard** - One-click copy of code content
-- 🌙 **Dark Theme** - Easy on the eyes GitHub-inspired dark theme
+## ✨ Features
 
-## Tech Stack
+- 🎨 **Sexy UI with Animations** - Smooth Framer Motion animations, glassmorphism effects, gradient accents
+- 🔍 **Search Functionality** - Find problems by name, tags, or keywords
+- 📁 **Category Navigation** - Browse problems organized by data structure/algorithm type
+- 🌙 **Dark/Light Theme** - Toggle between themes with animated transitions
+- 📋 **Code Copy Button** - One-click copy to clipboard
+- 💡 **Problem Descriptions** - Add context, complexity analysis, and notes
+- 🏷️ **Tags & Difficulty** - Visual indicators for problem metadata
+- 🔗 **LeetCode Links** - Quick access to original problems
+- 📊 **Syntax Highlighting** - Beautiful code display with line numbers
 
-- **Frontend**: React + Vite
-- **Backend**: Node.js + Express
-- **Syntax Highlighting**: react-syntax-highlighter
-- **Icons**: lucide-react
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- npm
+- Node.js 18+
+- npm or yarn
 
 ### Installation
 
-1. Install all dependencies:
-```bash
-cd codeviewerwebsite
-npm run install:all
-```
-
-Or install separately:
-```bash
-# Install server dependencies
-cd server
-npm install
-
-# Install client dependencies
-cd ../client
-npm install
-```
-
-### Running the Application
-
-1. **Start the server** (Terminal 1):
-```bash
-cd server
-npm run dev
-```
-
-2. **Start the client** (Terminal 2):
 ```bash
 cd client
+npm install
+```
+
+### Development
+
+```bash
 npm run dev
 ```
 
-3. Open http://localhost:3000 in your browser
+Opens at http://localhost:3000
 
-## Project Structure
+### Build for Production
 
-```
-codeviewerwebsite/
-├── server/
-│   ├── index.js         # Express server & API routes
-│   └── package.json
-├── client/
-│   ├── src/
-│   │   ├── App.jsx              # Main app component
-│   │   ├── index.css            # Global styles
-│   │   └── components/
-│   │       ├── FileTree.jsx     # File explorer component
-│   │       ├── CodeViewer.jsx   # Code display component
-│   │       └── StatsBar.jsx     # Statistics bar
-│   ├── index.html
-│   ├── vite.config.js
-│   └── package.json
-└── package.json         # Root scripts
+```bash
+npm run build
 ```
 
-## API Endpoints
+## 📁 Project Structure
 
-| Endpoint | Description |
-|----------|-------------|
-| `GET /api/files` | Get file tree structure |
-| `GET /api/file/:path` | Get file content |
-| `GET /api/stats` | Get repository statistics |
+```
+client/
+├── public/
+│   └── vite.svg          # Favicon
+├── scripts/
+│   └── generateCodeData.js   # Auto-generate data from repo
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx        # Top navigation bar
+│   │   ├── Sidebar.jsx       # Category/file tree
+│   │   ├── CodeViewer.jsx    # Code display component
+│   │   └── WelcomeScreen.jsx # Landing screen
+│   ├── context/
+│   │   └── ThemeContext.jsx  # Theme provider
+│   ├── data/
+│   │   └── codeData.js       # Problem data
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── vite.config.js
+```
 
-## Screenshots
+## 📝 Adding New Problems
 
-The application displays:
-- Left sidebar with expandable folder tree
-- Main content area with syntax-highlighted code
-- Header with search functionality
-- Stats bar showing file/folder/line counts
+### Option 1: Manual (Recommended for customization)
+
+Edit `src/data/codeData.js`:
+
+```javascript
+export const codeData = {
+  'Category': [
+    {
+      name: 'ProblemName.cpp',
+      path: 'Assignments/ProblemName.cpp',
+      description: 'Problem description here...',
+      difficulty: 'Easy', // 'Easy' | 'Medium' | 'Hard'
+      tags: ['Array', 'Two Pointers'],
+      timeComplexity: 'O(n)',
+      spaceComplexity: 'O(1)',
+      leetcodeLink: 'https://leetcode.com/problems/...',
+      notes: 'Additional notes or explanation',
+      code: `// Your C++ code here...`
+    },
+    // ... more problems
+  ],
+  // ... more categories
+};
+```
+
+### Option 2: Auto-generate from Repository
+
+```bash
+node scripts/generateCodeData.js
+```
+
+This scans your repository and generates `codeData.js` automatically.
+
+## 🎨 Customization
+
+### Colors
+
+Edit `tailwind.config.js` to change the color palette:
+
+```javascript
+theme: {
+  extend: {
+    colors: {
+      primary: { /* your colors */ },
+    }
+  }
+}
+```
+
+### Animations
+
+Modify Framer Motion variants in components for different animation styles.
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Connect repo to Vercel
+3. Set build command: `npm run build`
+4. Set output directory: `dist`
+5. Deploy!
+
+### Netlify
+
+1. Push to GitHub
+2. Connect repo to Netlify
+3. Build command: `npm run build`
+4. Publish directory: `dist`
+5. Deploy!
+
+### GitHub Pages
+
+```bash
+npm run build
+# Deploy the dist/ folder
+```
+
+## 🛠️ Tech Stack
+
+- **React 18** - UI library
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Lucide Icons** - Icon library
+- **React Syntax Highlighter** - Code highlighting
+
+## 📜 License
+
+MIT
 
 ---
 
-*Built with ❤️ for WinterPep DSA Practice*
+Made with ❤️ for DSA enthusiasts
