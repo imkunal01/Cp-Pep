@@ -1,0 +1,13 @@
+{
+  "name": "winterpep-codeviewer",
+  "version": "1.0.0",
+  "description": "A MERN stack code viewer for WinterPep DSA repository",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "dev": "start cmd /k \"cd server && npm run dev\" && start cmd /k \"cd client && npm run dev\""
+  },
+  "keywords": ["mern", "code-viewer", "dsa"],
+  "author": "Kunal"
+}

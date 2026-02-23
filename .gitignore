@@ -3,3 +3,4 @@ DevOps
 #  add full CP_DSA folder and its contents to .gitignore
 CP_DSA/
 
+node_modules/
