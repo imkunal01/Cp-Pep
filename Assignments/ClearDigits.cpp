@@ -18,5 +18,8 @@ string clearDigits(string s) {
 
 int main() {
     // Test cases
+    cout << clearDigits("a1b2c3") << endl; // Output: ""
+    cout << clearDigits("abc123") << endl; // Output: "a"
+    cout << clearDigits("1a2b3c") << endl; // Output: ""
     return 0;
 }
