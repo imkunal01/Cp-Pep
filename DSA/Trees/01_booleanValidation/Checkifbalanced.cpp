@@ -9,7 +9,7 @@ public:
 };
 int helper(TreeNode* root) {
     if(root == NULL){
-        return true;
+        return 0;
     }
 
     int lh = helper(root->left);
@@ -19,11 +19,11 @@ int helper(TreeNode* root) {
 
     if(abs(lh-rh)>1) return -1;
 
-    return max(lh,rh);
+    return max(lh,rh) + 1;
 
 }
 bool isBalanced(TreeNode* root){
-    return helper(root) != 01;
+    return helper(root) != -1;
 }
 
 int main() {

@@ -12,7 +12,7 @@ int main(){
         Adj[u][v] =1;
         Adj[v][u] =1;// if we remove this line it will be directed graph
     }
-     for(int i = 0; i < vertex; i++){
+    for(int i = 0; i < vertex; i++){
         for(int j = 0; j < vertex; j++){
             cout << Adj[i][j] << " ";
         }

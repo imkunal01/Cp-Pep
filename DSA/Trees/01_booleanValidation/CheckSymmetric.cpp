@@ -8,15 +8,16 @@ public:
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 bool checkSymetric(TreeNode* leftNode,TreeNode* rightNode){
-    if(leftNode == NULL && leftNode == NULL){
+    
+    if(leftNode == NULL && rightNode == NULL){
         return true;
     }
     
-    if(leftNode == NULL || leftNode == NULL){
+    if(leftNode == NULL || rightNode == NULL){
         return false;
     }
 
-    if(leftNode-> val != leftNode->val){
+    if(leftNode->val != rightNode->val){
         return false;
     }
     return checkSymetric(leftNode->left,rightNode->right) && checkSymetric(leftNode->right,rightNode->left);
@@ -34,9 +35,9 @@ int main() {
 
 
     if(checkSymetric(r,l)) {
-        cout << "Tree is balanced " << endl;
+        cout << "Tree is symmetric " << endl;
     } else {
-        cout << "Tree is not balanced" << endl;
+        cout << "Tree is not symmetric" << endl;
     }
     
     return 0;
