@@ -2,7 +2,6 @@
 using namespace std;
 
 vector<int> bfs(int startNode, const vector<vector<int>>& adj){
-      
     vector<bool> visited(adj.size(), false);
     queue<int> q;
     vector<int> traversal;
