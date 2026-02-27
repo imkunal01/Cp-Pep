@@ -6,7 +6,7 @@ A comprehensive Data Structures & Algorithms practice repository in C++, coverin
 
 ```
 WinterPep/
-├── Assignments/        # 100+ DSA problems (daily practice)
+├── Assignments/        # 150+ DSA problems (daily practice)
 ├── Contest/            # Competition problems
 ├── CP_DSA/             # Competitive programming topics
 ├── DSA/                # Topic-wise organized problems
