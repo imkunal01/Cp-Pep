@@ -9,6 +9,5 @@ int main() {
         
     }
     cout << "Decimal Value: " << decimalValue << endl;
-    
     return 0;
 }
