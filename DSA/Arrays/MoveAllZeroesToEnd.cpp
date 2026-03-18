@@ -13,8 +13,6 @@ int main() {
     for(int i = non ;i<n;i++){
         nums[i] = 0;
     }
-
-
     for(int i : nums){
         cout<<i<<" ";
     }

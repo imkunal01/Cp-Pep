@@ -35,16 +35,10 @@ int fib(int n){
 bool checkIfSorted(vector<int>v,int i){
     if(i == v.size()) return true;
     if(v[i]>v[i+1]) return false;
-
     return checkIfSorted(v,i+1);
 }
-
-
-
 int main() {
     vector<int> v = {1,2,4,1,3,1,2,4,5};
-
     int n = 6;
-    
     return 0;
 }
