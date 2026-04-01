@@ -1,26 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> sortArrayByParityII(vector<int>& nums) {
+
+void movezeros(vector<int>& nums){
     int n = nums.size();
-    vector<int> result(n);
-    // try brute force approach
-    for(int i = 0; i < n; i++){
-        if(i % 2 == 0 && nums[i] % 2 == 0){
-            result[i] = nums[i];
+    int non = 0;
+    for(int i =0;i<n;i++){
+        if(nums[i] != 0){
+            nums[non] = nums[i];
+            non++;
         }
     }
-    for(int i = 0; i < n; i++){
-        if(i % 2 != 0 && nums[i] % 2 != 0){
-            result[i] = nums[i];
-        }
+    for(int i = non ;i<n;i++){
+        nums[i] = 0;
     }
-    return result;
 }
 int main() {
-    vector<int> nums = {4, 2, 5, 7};
-    vector<int> result = sortArrayByParityII(nums);
-    for (int num : result) {
-        cout << num << " ";
+    vector<int>nums = {1,2,0,0,0,3,4,1};
+    movezeros(nums);
+    for(int i : nums){
+        cout<<i<<" ";
     }
     return 0;
 }
