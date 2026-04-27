@@ -15,9 +15,7 @@ int height(TreeNode* root){
     }
     int l = height(root->left);
     int r = height(root->right);
-    
     int h = 1+max(l,r);
-
     return h;
 }
 

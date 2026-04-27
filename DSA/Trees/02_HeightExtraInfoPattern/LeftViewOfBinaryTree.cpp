@@ -63,11 +63,11 @@ int main() {
        cout<<result[i]<<" ";
    }
 
-    vector<int> resultBFS = LeftViewBFS(r);
-    cout<<endl;
-    for(int i=0;i<resultBFS.size();i++){
-        cout<<resultBFS[i]<<" ";
-    }
+    // vector<int> resultBFS = LeftViewBFS(r);
+    // cout<<endl;
+    // for(int i=0;i<resultBFS.size();i++){
+    //     cout<<resultBFS[i]<<" ";
+    // }
 
     
     return 0;

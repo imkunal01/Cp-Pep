@@ -8,33 +8,45 @@ public:
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
- 
+  void solve(TreeNode* root,int level,vector<int>&v){
+        if(root == NULL){
+            return;
+        }
+        if(level == v.size()){
+            v.push_back(root->val);
+        }
+        solve(root->left,level+1,v);
+        solve(root->right,level+1,v);
+    }
+    vector<int> leftView(TreeNode *root) {
+        vector<int> v;
+        solve(root,0,v);
+        return v;
+    }
 
 
-    vector<int> topViewBFS(TreeNode *root) {
+    vector<int> LeftViewBFS(TreeNode *root) {
         vector<int> v;
         if(root == NULL){
             return v;
         }
-        queue<pair<TreeNode*, int>> q;
-        map<int,int> mp;
-
-        q.push({root,0});
-
+        queue<TreeNode*> q;
+        q.push(root);
         while(!q.empty()){
-            auto node = q.front();
-            q.pop();
-
-            TreeNode* f = node.first;
-            int hd = node.second;
-
-            if(mp.find(hd) == mp.end()) mp[hd] = f->val;
-            if(f->left) q.push({f->left,hd-1});
-            if(f->right) q.push({f->right,hd+1});
-        }
-
-        for(auto& i:mp){
-            v.push_back(i.second);
+            int size = q.size();
+            for(int i=0;i<size;i++){
+                TreeNode* node = q.front();
+                q.pop();
+                if(i == 0){
+                    v.push_back(node->val);
+                }
+                if(node->left != NULL){
+                    q.push(node->left);
+                }
+                if(node->right != NULL){
+                    q.push(node->right);
+                }
+            }
         }
         return v;
     }
@@ -46,7 +58,12 @@ int main() {
     r->right = new TreeNode(3);
 
 
-    vector<int> resultBFS = topViewBFS(r);
+   vector<int> result = leftView(r);
+   for(int i=0;i<result.size();i++){
+       cout<<result[i]<<" ";
+   }
+
+    vector<int> resultBFS = LeftViewBFS(r);
     cout<<endl;
     for(int i=0;i<resultBFS.size();i++){
         cout<<resultBFS[i]<<" ";
