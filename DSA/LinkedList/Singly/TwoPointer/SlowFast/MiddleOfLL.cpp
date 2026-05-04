@@ -12,8 +12,13 @@ struct ListNode {
 
 // TODO: Implement solution
 ListNode* middleNode(ListNode* head) {
-    // Find middle node of linked list
-    return nullptr;
+    ListNode* slow = head;
+    ListNode* fast = head;
+    while (fast != nullptr && fast->next != nullptr) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
 }
 
 int main() {
