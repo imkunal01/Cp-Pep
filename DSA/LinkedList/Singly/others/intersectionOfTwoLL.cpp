@@ -26,18 +26,16 @@ Node* insert(Node* head, int data){
 Node* intersection(Node* head1, Node* head2){
     Node* temp1 = head1;
     Node* temp2 = head2;
-    while(temp1!=NULL && temp2!=NULL){
+
+    while(temp1 != NULL && temp2 != NULL){
         if(temp1 == temp2){
             return temp1;
         }
-        else if(temp1->data < temp2->data){
-            temp1 = temp1->next;
-        }
-        else{
-            temp2 = temp2->next;
-        }
+        temp1 = temp1->next;
+        temp2 = temp2->next;
     }
     return NULL;
+
 }
 int main() {
     Node* head1 = NULL;

@@ -72,7 +72,6 @@ int main() {
         cout << "Test failed: expected palindrome\n";
         return 1;
     }
-
     cout << "All tests passed\n";
 
     delete n1;

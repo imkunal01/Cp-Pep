@@ -5,33 +5,60 @@
 using namespace std;
 
 class MyCircularQueue {
+    vector<int> data;
+    int head;
+    int tail;
+    int count;
+    int capacity;
+
 public:
-    // TODO: Implement solution
     MyCircularQueue(int k) {
+        data.resize(k);
+        head = 0;
+        tail = -1;
+        count = 0;
+        capacity = k;
     }
     
     bool enQueue(int value) {
-        return false;
-    }
-    
-    bool deQueue() {
-        return false;
-    }
-    
-    int Front() {
-        return -1;
-    }
-    
-    int Rear() {
-        return -1;
-    }
-    
-    bool isEmpty() {
+        if (isFull()) {
+            return false;
+        }
+        tail = (tail + 1) % capacity;
+        data[tail] = value;
+        ++count;
         return true;
     }
     
+    bool deQueue() {
+        if (isEmpty()) {
+            return false;
+        }
+        head = (head + 1) % capacity;
+        --count;
+        return true;
+    }
+    
+    int Front() {
+        if (isEmpty()) {
+            return -1;
+        }
+        return data[head];
+    }
+    
+    int Rear() {
+        if (isEmpty()) {
+            return -1;
+        }
+        return data[tail];
+    }
+    
+    bool isEmpty() {
+        return count == 0;
+    }
+    
     bool isFull() {
-        return false;
+        return count == capacity;
     }
 };
 

@@ -10,10 +10,25 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-// TODO: Implement solution
 ListNode* oddEvenList(ListNode* head) {
-    // Group odd and even indexed nodes
-    return nullptr;
+    if (head == nullptr || head->next == nullptr) {
+        return head;
+    }
+
+    ListNode* odd = head;
+    ListNode* even = head->next;
+    ListNode* evenHead = even;
+
+    while (even != nullptr && even->next != nullptr) {
+        odd->next = even->next;
+        odd = odd->next;
+
+        even->next = odd->next;
+        even = even->next;
+    }
+
+    odd->next = evenHead;
+    return head;
 }
 
 int main() {
