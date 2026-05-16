@@ -18,6 +18,9 @@ int myPowIterative(double x, int n) {
     }
     double ans = 1;
     while(exp>0){
+
+
+        
         if(exp%2==1) ans = ans*x;
         x = x*x;
         exp = exp/2;

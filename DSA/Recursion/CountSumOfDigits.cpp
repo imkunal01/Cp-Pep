@@ -10,13 +10,11 @@ int sumIterative (int n ){
     return sum;
 }
 int sumRecursive(int n ){
-    
     if(n < 10) return n;
     return (n%10) + sumRecursive(n/10);
 }
 
 int main(){
-
     int n = 12345;
     cout<<sumIterative(n)<<endl;
     cout<<sumRecursive(n)<<endl;
