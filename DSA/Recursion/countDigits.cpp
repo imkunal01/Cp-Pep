@@ -6,6 +6,8 @@ unsigned long long magnitude(long long n) {
                    : static_cast<unsigned long long>(n);
 }
 
+
+
 long long countDigitIterative(long long n ){
     if(n == 0) return 1;
     unsigned long long x = magnitude(n);
@@ -16,6 +18,7 @@ long long countDigitIterative(long long n ){
     }
     return count;
 }
+
 int countDigitRecursive(unsigned long long n ){
     if(n<10) return 1;
     return 1+countDigitRecursive(n/10);
