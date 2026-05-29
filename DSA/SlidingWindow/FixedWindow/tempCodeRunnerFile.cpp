@@ -1,41 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-int Check(vector<int>arr,int k){
-    int n = arr.size();
-    int good= 0;
-    int bad= 0;
-    for(int i =0;i<n;i++){
-        if(arr[i]<k){
-            good++;
-        }
-    }
-    
-    for(int i = 0;i<n;i++){
-        if(arr[i]>k){
-            bad++;
-        }
-    }
-
-    int l =0;
-    int ans = bad;
-    if (good == 0 || good == n) return 0;
-
-    for(int i = good;i<n;i++){
-        if(arr[l]>k){
-            bad--;
-        }
-        l++;
-        if(arr[i]>k){
-            bad++;
-        }
-        ans = min(ans,bad);
-    }
-    return ans;
-}
 int main() {
-    vector<int>arr = {2, 7, 9, 5, 8, 7, 4};
-    int k = 6;
-    int ans = Check(arr,k);
-    cout<<ans;
+    vector<int>v = {1, 4, 2, 10, 23, 3, 1, 0, 20};
+    int n = v.size();
+    int  k = 4;
+
+    int ksum = 0;
+
+    for(int i =0;i<k;i++){
+        ksum+=v[i];
+    }
+    int maxs = ksum;
+    for(int i =k;i<n;i++){
+        int sum =0;
+        ksum+=v[i];
+        ksum -=v[i-k];
+        maxs = max(maxs,ksum);
+    }
+    cout<<maxs;
     return 0;
 }
