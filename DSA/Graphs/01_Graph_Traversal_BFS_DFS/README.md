@@ -21,14 +21,14 @@
 
 | # | Problem | Difficulty |
 |---|---------|------------|
-| 200 | Number of Islands | Medium |
-| 547 | Number of Provinces | Medium |
+| 200 | Number of Islands | Medium | done 
+| 547 | Number of Provinces | Medium | done
 | 733 | Flood Fill | Easy |
 | 695 | Max Area of Island | Medium |
-| 841 | Keys and Rooms | Medium |
+| 841 | Keys and Rooms | Medium | done 
 | 1306 | Jump Game III | Medium |
 | 797 | All Paths From Source to Target | Medium |
-| 1971 | Find if Path Exists in Graph | Easy |
+| 1971 | Find if Path Exists in Graph | Easy | done
 | 133 | Clone Graph | Medium |
 | 323 | Number of Connected Components in an Undirected Graph | Medium |
 
