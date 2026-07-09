@@ -23,7 +23,6 @@ int minEatingSpeedBinary(const vector<int>& piles, int h){
         int mid = low + (high - low) / 2;
 
         long long hrs = 0;
-
         for(int p : piles){
             hrs += (p + mid - 1) / mid;
         }

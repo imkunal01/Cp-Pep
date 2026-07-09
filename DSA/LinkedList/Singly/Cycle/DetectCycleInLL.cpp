@@ -12,11 +12,27 @@ struct ListNode {
 
 // TODO: Implement solution
 bool hasCycle(ListNode* head) {
-    // Detect if linked list has a cycle
+    ListNode* slow = head;
+    ListNode* fast = head;
+    while(fast && fast->next) {
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow == fast) {
+            return true;
+        }
+    }
     return false;
 }
 
 int main() {
-    // Test cases
+    // create a test case here
+    ListNode* head = new ListNode(1);
+    ListNode* second = new ListNode(2);
+    ListNode* third = new ListNode(3);
+    head->next = second;
+    second->next = third;
+    third->next = second; // create a cycle
+    cout << hasCycle(head) << endl;
+    
     return 0;
 }

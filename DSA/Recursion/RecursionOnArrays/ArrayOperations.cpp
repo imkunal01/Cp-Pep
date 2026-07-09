@@ -37,8 +37,22 @@ bool checkIfSorted(vector<int>v,int i){
     if(v[i]>v[i+1]) return false;
     return checkIfSorted(v,i+1);
 }
+
+int CheckArray(vector<int>arr,int n,int key){
+    if(n == 0) {
+        return -1;
+    }
+    if(arr[n] == key){
+        return n;
+    }
+    return CheckArray(arr,n-1,key);
+    
+}
 int main() {
+    cout<<boolalpha;
     vector<int> v = {1,2,4,1,3,1,2,4,5};
-    int n = 6;
+    int n = 2;
+    int key = 6;
+    cout<<CheckArray(v,n,key);
     return 0;
 }
