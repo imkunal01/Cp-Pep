@@ -6,7 +6,7 @@ using namespace std;
 
 // TODO: Implement solution
 vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-    // Find next greater element for nums1 in nums2
+    
     return {};
 }
 

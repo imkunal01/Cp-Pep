@@ -23,6 +23,8 @@ class Solution {
             }
         }
     }
+
+    //  what is provinces = provinces are group of connected cities or nodes 
     int findCircleNum(vector<vector<int>>& isConnected) {
         int n = (int)isConnected.size();
         int provinces = 0;
@@ -34,7 +36,7 @@ class Solution {
                 provinces++; // one province found
             }
         }
-
+        
         return provinces;
     }
 };

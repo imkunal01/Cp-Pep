@@ -2,16 +2,30 @@
 using namespace std;
 
 int main(){
-    cout<<boolalpha;
-    int a = 10;
-    int b = 20;
-    bool marks = a>b?true:false; 
-    cout<<marks<<endl;
+    int n = 4;
 
-    for(int i = 0;i<5;i++){
-        for(int j = 0;j<5;j++){
-            cout<<"*";
+    vector<int>nums{3, 5, 4, 2};
+    int M = 10;
+
+    // int remaining = M;
+    vector<int>ans;
+    int start = 1;
+    int remaining = M;
+
+    for (int x : nums) {
+        if (x <= remaining) {
+            ans.push_back(start);
+
+            start += x;
+            remaining -= x;
         }
-        cout<<endl;
+        else {
+            ans.push_back(-1);
+        }
     }
+    for(int x : ans){
+        cout << x << " ";
+    }
+    cout << endl;
 }
+

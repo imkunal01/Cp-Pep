@@ -4,15 +4,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct ListNode {
+struct Node {
     int val;
-    ListNode* next;
-    ListNode(int x) : val(x), next(nullptr) {}
+    Node* next;
+    Node(int x) : val(x), next(nullptr) {}
 };
 
 // TODO: Implement solution
-ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-    // Merge two sorted linked lists
+Node* mergeTwoLists(Node* list1, Node* list2) {
+
+    Node* dummy = new Node(0);
+    Node* tail = dummy;
+    
     return nullptr;
 }
 

@@ -13,7 +13,6 @@ class MyStack{
         
     //     // 2. Add the new element to the back
     //     q.push(x);
-        
     //     // 3. Rotate the queue: move all previous elements to the back
     //     for (int i = 0; i < size; i++) {
     //         q.push(q.front());
@@ -29,7 +28,6 @@ class MyStack{
             q1.pop();
         }
         swap(q1,q2);
-        
     }
 
     void pop(){
@@ -48,12 +46,12 @@ class MyStack{
 };
 
 int main() {
+    cout<<boolalpha;
     MyStack stack;
     
     stack.push(10);
     stack.push(20);
     stack.push(30);
-    
     cout << "Top element: " << stack.top() << endl;
     
     while(!stack.isEmpty()){
@@ -61,6 +59,7 @@ int main() {
         stack.pop();
     }
     cout << endl;
+    cout<<stack.isEmpty();
     
     return 0;
 }

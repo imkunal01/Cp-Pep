@@ -4,19 +4,15 @@ using namespace std;
 
 void deleteMiddle(stack<int>& st, int n) {
     if(st.empty()) return;
-
     int mid = n / 2;   // 0-based from top
     stack<int> temp;
-
     // Move top mid elements
     for(int i = 0; i < mid; i++) {
         temp.push(st.top());
         st.pop();
     }
-
     // Remove middle element
     st.pop();
-
     // Put elements back
     while(!temp.empty()) {
         st.push(temp.top());

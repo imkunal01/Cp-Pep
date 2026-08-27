@@ -12,7 +12,7 @@ struct ListNode {
 
 // TODO: Implement solution
 ListNode* sortList(ListNode* head) {
-    // Sort linked list containing only 0s, 1s and 2s
+    
     return nullptr;
 }
 

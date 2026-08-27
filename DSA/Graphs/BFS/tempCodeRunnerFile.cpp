@@ -1,64 +1,56 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <queue>
+#include <vector>
 
-void bfs(int startNode, vector<vector<int>>& adj,
-             vector<int>& visited,
-             int& nodeCount,
-             int& edgeCount) {
-        
+using std::queue;
+using std::vector;
+
+class Solution {
+    void bfsProvince(int start, const vector<vector<int>>& isConnected, vector<char>& visited) {
         queue<int> q;
-        q.push(startNode);
-        visited[startNode] = 1;
+        q.push(start);
+        visited[start] = 1;
 
-        while(!q.empty()) {
+        int n = (int)isConnected.size();
+        while (!q.empty()) {
             int u = q.front();
             q.pop();
 
-            nodeCount++;
-            edgeCount += adj[u].size();  // count edges
-
-            for(int v : adj[u]) {
-                if(!visited[v]) {
+            for (int v = 0; v < n; v++) {
+                if (isConnected[u][v] == 1 && !visited[v]) {
                     visited[v] = 1;
                     q.push(v);
                 }
             }
         }
     }
+    int findCircleNum(vector<vector<int>>& isConnected) {
+        int n = (int)isConnected.size();
+        int provinces = 0;
+        vector<char> visited(n, 0);
 
-    int countCompleteComponents(int n, vector<vector<int>>& edges) {
-        
-        // Step 1: Build adjacency list
-        vector<vector<int>> adj(n);
-        for(auto &e : edges) {
-            adj[e[0]].push_back(e[1]);
-            adj[e[1]].push_back(e[0]);
-        }
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                bfsProvince(i, isConnected, visited); // visit full component
+                queue<int> q;
+                q.push(i);
+                visited[i] = 1;
 
-        vector<int> visited(n, 0);
-        int completeCount = 0;
+                int n = (int)isConnected.size();
+                while (!q.empty()) {
+                    int u = q.front();
+                    q.pop();
 
-        for(int i = 0; i < n; i++) {
-            if(!visited[i]) {
-                
-                int nodeCount = 0;
-                int edgeCount = 0;
-
-                bfs(i, adj, visited, nodeCount, edgeCount);
-
-                edgeCount /= 2; // because undirected graph
-
-                if(edgeCount == (nodeCount * (nodeCount - 1)) / 2)
-                    completeCount++;
+                    for (int v = 0; v < n; v++) {
+                        if (isConnected[u][v] == 1 && !visited[v]) {
+                            visited[v] = 1;
+                            q.push(v);
+                        }
+                    }
+                }
+                provinces++; // one province found
             }
         }
 
-        return completeCount;
+        return provinces;
     }
-int main() {
-    int n = 6;
-    vector<vector<int>> edges = {{0,1}, {0,2}, {1,2}, {3,4}};
-    
-    cout << countCompleteComponents(n, edges) << endl; // Output: 2
-    return 0;
-}
+};

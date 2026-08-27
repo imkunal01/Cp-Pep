@@ -13,9 +13,12 @@ struct TreeNode {
 
 // TODO: Implement solution
 TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-    // Use BST property to find LCA
-    return nullptr;
-}
+        if(root == NULL || root == p || root == q )return root;
+        TreeNode* l = lowestCommonAncestor(root->left,p,q);
+        TreeNode* r = lowestCommonAncestor(root->right,p,q);
+        if(l != NULL && r != NULL)return root;
+        return l != NULL ? l:r;
+    }
 
 int main() {
     // Test cases

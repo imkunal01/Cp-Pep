@@ -1,25 +1,15 @@
-// Problem: Prefix Evaluation
-// Date: February 13, 2026
-
+// Problem: Postfix Evaluation
+// Date: February 13, 2026 
 #include <bits/stdc++.h>
 using namespace std;
 
 // TODO: Implement solution
-int evaluatePrefix(string s) {
+int evaluatePostfix(string s) {
     // create a stack
     stack<int> st;
     int n = s.length();
     // traverse string right to left
-    for(int i = n-1;i>=0;i--){
-
-
-
-
-
-
-
-
-    
+    for(int i = 0;i<n;i++){
         // if s[i] is operand ->st.push()
         if(s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/'){
             // pop two elements from stack

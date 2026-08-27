@@ -13,7 +13,11 @@ struct TreeNode {
 
 // TODO: Implement solution
 int sumOfLeftLeaves(TreeNode* root) {
-    // Sum of all left leaf nodes
+    if(root == NULL){
+        retuurn head;
+    }
+
+    
     return 0;
 }
 

@@ -2,14 +2,30 @@
 using namespace std;
 
 int main(){
-    int marks = 55;
-    int leaves = 10;
-    if(marks<50 && leaves<10){
-        cout<<"Passed";
+    int n = 4;
+
+    vector<int>nums{3, 5, 4, 2};
+    int M = 10;
+
+    // int remaining = M;
+    vector<int>ans;
+    int start = 1;
+    int remaining = M;
+
+    for (int x : nums) {
+        if (x <= remaining) {
+            ans.push_back(start);
+
+            start += x;
+            remaining -= x;
+        }
+        else {
+            ans.push_back(-1);
+        }
     }
-    else{
-        cout<<"Failed";
-        
+    for(int x : ans){
+        cout << x << " ";
     }
-    return 0;
+    cout << endl;
 }
+
